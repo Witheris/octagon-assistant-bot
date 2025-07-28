@@ -156,9 +156,7 @@ async function handleMessage(bot, msg) {
 
 async function listUserTickets(bot, msg) {
   const chatId = msg.chat.id;
-  const user = await User.findOne({ where: { telegramId: msg.from.id.toString() } });
-
-  if (!user) return bot.sendMessage(chatId, 'Пользователь не найден.');
+  const user = await User.findOne({ where: { telegramId: msg.from.id.toString() } })
 
   const tickets = await Ticket.findAll({ where: { userId: user.id }, order: [['createdAt', 'DESC']] });
 
