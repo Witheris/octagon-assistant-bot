@@ -1,1 +1,1 @@
-https://github.com/Witheris/octagon-bot
+https://github.com/Witheris/octagon-assistant-bot
